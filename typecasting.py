@@ -20,4 +20,10 @@ print("javascript)",end="\t")
 print("python")
 print("java")
 
-#operators
+#operators are used to perform operations on operands
+# 1.arithmatic operator(+,-,*,/,%,**)
+print(2+2)
+print("2"+"2")
+print(10+5)
+print(10-5)
+print(10*5)

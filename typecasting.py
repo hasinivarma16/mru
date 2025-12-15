@@ -19,3 +19,5 @@ print("15","12","2025",sep="-")
 print("javascript)",end="\t")
 print("python")
 print("java")
+
+#operators

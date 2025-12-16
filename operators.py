@@ -22,3 +22,9 @@ print("" or "py")
 print("js" or "py")
 print(False or "false")
 print(True or "true")
+
+#we use  = for assigning values for identifiers 
+# we use == for content comparsion
+#identity operator (1. is 2. is not) we use  identity operator for address comparision or memory location comparision
+
+#primitives

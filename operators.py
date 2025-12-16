@@ -32,4 +32,5 @@ a=10
 print(id(a),a)
 b=10
 print(id(b),b)
-print(a is b)
+print(a is b) 
+#non primitive

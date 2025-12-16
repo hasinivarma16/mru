@@ -28,3 +28,8 @@ print(True or "true")
 #identity operator (1. is 2. is not) we use  identity operator for address comparision or memory location comparision
 
 #primitives
+a=10
+print(id(a),a)
+b=10
+print(id(b),b)
+print(a is b)

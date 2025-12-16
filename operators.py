@@ -15,4 +15,5 @@ print(0 and "")
 print("" and 0)
 print(" " and "py")
 print(False and True)
-
+ #for non-boolean values in and )if a is true result is b value,if a is false result is a)
+print([] and "js")

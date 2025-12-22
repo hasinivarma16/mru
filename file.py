@@ -1,23 +1,24 @@
-#1st way
-file_obj = open("content.txt", "r")
-file_data=file_obj.read(20)
-print(file_data)
-file_obj.close()
 
-#2nd way using with statement
 with open("content.txt", "r") as file_obj:
-    file_data=file_obj.readline()#read single line
-    file_data=file_obj.readlines()#read all lines as list
-    file_data=file_obj.read()#read full file
-    print(file_data)
+    data = file_obj.read(20)
+    print("First 20 characters:")
+    print(data)
+
+with open("content.txt", "r") as file_obj:
+    data = file_obj.read()
+    print("\nFull file content:")
+    print(data)
+
 
 with open("content.txt", "w") as file_obj:
-    file_data=file_obj.write("This is new content added to file.\n")
+    file_obj.write("This is new content added to file.\n")
+    file_obj.write("File handling in Python.\n")
 
-l=["python","java","c++"]
+
+languages = ["python\n", "java\n", "c++\n"]
 with open("content.txt", "w") as file_obj:
-    file_obj.writelines(l)
+    file_obj.writelines(languages)
 
-#append mode
+
 with open("content.txt", "a") as file_obj:
-    file_obj.write("\nThis line is appended.")
+    file_obj.write("This line is appended.\n")

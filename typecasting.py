@@ -1,0 +1,34 @@
+# type casting: converting one datatype to another datatype
+#print(int("10"))
+#print(int(10))
+print(int("10"))
+print(int(10), type(int(10)))
+#converting str to float
+print(float("10"))
+print(float("1000.5"))
+#converting str to complex
+print(complex("10"))
+print(complex("10.5"))
+print(complex(100,5))
+print(complex(True,False))
+#values
+print("python","python","python")
+print("python","python","python",sep="$$")
+print("15","12","2025",sep="-")
+# end
+print("javascript)",end="\t")
+print("python")
+print("java")
+
+#operators are used to perform operations on operands
+# 1.arithmatic operator(+,-,*,/,%,**)
+print(2+2)
+print("2"+"2")
+print(10+5)
+print(10-5)
+print(10*5)
+print(10/5)
+print(10%5)
+print(10**5)
+print(100-98+2)
+

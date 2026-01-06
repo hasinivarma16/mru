@@ -1,0 +1,64 @@
+-create a new file main.py,model.py
+#http://127.0.0.1:8000 /(upto 8000 is main domain,nxt is enpoint and overall is root page or home)
+-------------------------------------------------------------------------------------------------------------------------------
+***in main.py:-(code)***
+ from fastapi import FastAPI
+ #app:-
+app=FastAPI() #display user
+#router:-
+#http://127.0.0.1:8000/
+@app.get("/")
+async def get_all_user():
+	return {"message":"Getting all the user information"} #this is response for the slash means address
+-------------------------------------------------------------------------------------------------------------------------------------
+#http://127.0.0.1:8000/name :- (/name is endpoint and parameter)
+#1.dynamic parameters:-how to access the parameters,in this only one value can be passed;;;;2.Query parameter()
+#1.dynamic parameters:-
+#http://127.0.0.1:8000/user/python 
+@app.get("/user/{name}") #ex:-http://127.0.0.1:8000/user/python,,,,/user/python is endpoint and python is parameter
+async def user_detail(name):
+	return {"message":f"user name is {name}"} # we will get python
+--------------------------------------------------------------
+#2.Query parameter():-
+#http://127.0.0.1:8000/user/?name="luffy"&age=23&dep"ds"   
+@app.get("/user")
+async def user_info(name:str,age:int,dep:str):
+	return {"message":f"{name} is {age} old and belongs to {dep}"}
+--------------------------------------------------------------
+#install postman:---needed for CRUD operations
+--------------------------------------------------------------
+***in model.py(code):-*** (in fast api we have default validations)
+from pydantic import BaseModel  # basemodel used for validation if we are not using basemodel we need to use constructors
+#creating class
+class User(BaseModel):-   #here basemodel is parent
+	id:int
+	name:str
+	age:int
+	dep:str
+---------------------------------------------------------------
+***crud.py***
+from fastapi import FastAPI
+from model import User
+#app
+app=FastAPI()
+
+users=[
+	User(id=1,name="python",age=40,dep="cs"),
+	User(id=2,name="js",age=25,dep="ds"),
+	User(id=3,name="c",age=70,dep="it")
+]
+#getting all the users
+@app.get("/")
+async def get_all_user():
+	return users
+
+
+------------------------------------------------------------------
+without postman we can test our api using 127.0.0.1.8000/docs
+
+
+
+
+
+
+
